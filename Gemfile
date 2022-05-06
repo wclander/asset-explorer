@@ -27,8 +27,16 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-# JWT for EVE authentication
+# JWT, oauth for EVE authentication
 gem "jwt"
+gem "oauth2"
+
+# HTTP for requests
+gem "net-http"
+gem "http"
+
+# to Use active record for sessions
+gem 'activerecord-session_store'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

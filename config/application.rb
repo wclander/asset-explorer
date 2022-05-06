@@ -19,5 +19,12 @@ module AssetExplorer
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.hosts << "ohmiris.space"
+
+    # OAuth configuration
+    config.x.oauth.client_id = "CLIENT_ID"
+    config.x.oauth.client_secret = "CLIENT_SECRET"
+    config.x.oauth.idp_url = "https://login.eveonline.com/"
+    config.x.oauth.redirect_uri = "https://ohmiris.space/eve_callback"
+    config.x.oauth.scopes = "publicData esi-wallet.read_character_wallet.v1 esi-universe.read_structures.v1 esi-assets.read_assets.v1 esi-ui.open_window.v1 esi-ui.write_waypoint.v1 esi-markets.structure_markets.v1 esi-characters.read_loyalty.v1 esi-markets.read_character_orders.v1 esi-characters.read_blueprints.v1"
   end
 end
