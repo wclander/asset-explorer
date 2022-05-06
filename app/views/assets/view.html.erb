@@ -1,0 +1,9 @@
+<h1>View</h1>
+<ul>
+<% @all_assets.each do |asset| %>
+    <li>
+        <img src="https://images.evetech.net/types/<%= asset["type_id"] %>/icon?size=64&tenant=singularity"/> <%= asset["item_id"] %>
+        <p style = "display:none"><%= asset %></p>
+    </li>
+<% end %>
+</ul>
