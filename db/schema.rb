@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_06_202249) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_15_165418) do
+  create_table "characters", force: :cascade do |t|
+    t.string "character_owner_hash"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["character_owner_hash"], name: "index_characters_on_character_owner_hash", unique: true
+    t.index ["user_id"], name: "index_characters_on_user_id"
+  end
+
   create_table "sessions", force: :cascade do |t|
     t.string "session_id", null: false
     t.text "data"
@@ -20,4 +29,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_06_202249) do
     t.index ["updated_at"], name: "index_sessions_on_updated_at"
   end
 
+  create_table "tokens", force: :cascade do |t|
+    t.integer "character_id", null: false
+    t.string "token"
+    t.datetime "valid_until"
+    t.boolean "is_refresh_token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["character_id"], name: "index_tokens_on_character_id"
+    t.index ["token"], name: "index_tokens_on_token", unique: true
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "characters", "users"
+  add_foreign_key "tokens", "characters"
 end

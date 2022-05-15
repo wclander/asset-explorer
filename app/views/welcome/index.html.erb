@@ -1,0 +1,5 @@
+<% if session[:logged_in] %>
+    <%= link_to "View All Assets", controller: "assets", action: :view %>
+<% else %>
+    Log in to continue
+<% end %>

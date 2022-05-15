@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'list/categories'
   get 'assets/view'
   get 'assets/search'
+  get 'assets/total'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

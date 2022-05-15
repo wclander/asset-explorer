@@ -1,0 +1,19 @@
+.assets-list {
+    background-color: #444444;
+    width: 100%;
+    th {
+        background-color: #888888;
+    }
+    .item-icon {
+        &, img {
+            width: 32px;
+        }
+    }
+    .item-name {
+        background-color: #777777;
+        color: #111111;
+    }
+    .item-json {
+        display: none;
+    }
+}

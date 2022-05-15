@@ -6,16 +6,35 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <% if !session[:logged_in] %>
-        <%= link_to image_tag("/images/eve-sso-login-black-large.png"), controller: 'oauth', action: :login %>
-    <% else %>
-        <p>Logged in as <%= current_user %>, <%= link_to "Log out", controller: "oauth", action: :logout %><p>
-    <% end %>
+    <header id="main-header">
+        <h1>Asset Explorer</h1>
+        <% if !session[:logged_in] %>
+            <div id="login-box">
+            <%= link_to image_tag("/images/eve-sso-login-black-large.png"), controller: 'oauth', action: :login %>
+            </div>
+        <% else %>
+            <div id = "logout">
+                <p><%= link_to "Log out", controller: "oauth", action: :logout %><p>
+            </div> 
+            <div id="login-box">
+                <p>Logged in as <%= current_user %></p>
+            </div>
+        <% end %>
+    </header>
     <%= yield %>
+    <footer id = "main-footer">
+        <nav>
+            <!-- TODO: insert links such as contacts, etc -->
+        </nav>
+    </footer>
   </body>
 </html>

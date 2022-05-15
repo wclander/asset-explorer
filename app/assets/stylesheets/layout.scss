@@ -1,0 +1,43 @@
+body {
+    margin: 0px;
+}
+
+#main-header {
+    background-color: #222;
+    width: 100%;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    h1 {
+        padding-left: 2em;
+        font-size: 20px;
+        float: left;
+        color: white;
+    } 
+}
+
+@mixin header-menu-item {
+    float: right;
+    p {
+        line-height: 20px;
+        color: #ddd;
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
+}
+
+#login-box {
+    @include header-menu-item
+    background-color: #333;
+    img {
+        height: 100%;
+    }
+}
+
+#logout {
+    @include header-menu-item
+    background-color: #222;
+}

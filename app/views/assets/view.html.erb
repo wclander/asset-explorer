@@ -1,9 +1,15 @@
-<h1>View</h1>
-<ul>
-<% @all_assets.each do |asset| %>
-    <li>
-        <img src="https://images.evetech.net/types/<%= asset["type_id"] %>/icon?size=64&tenant=singularity"/> <%= asset["item_id"] %>
-        <p style = "display:none"><%= asset %></p>
-    </li>
-<% end %>
-</ul>
+<!--<h1>View</h1>-->
+<table class = "assets-list">
+    <tr>
+        <th></th>
+        <th>Asset ID</th>
+        <th>Raw JSON</th>
+    </tr>
+    <% @all_assets.each do |asset| %>
+        <tr>
+            <td class = "item-icon"><img src="https://images.evetech.net/types/<%= asset["type_id"] %>/icon?size=64&tenant=singularity"/></td>
+            <td class = "item-name"> <%= asset["name"] %></td>
+            <td class = "item-json"> <%= asset %></td>
+        </tr>
+    <% end %>
+</table>

@@ -54,7 +54,6 @@ class OauthController < ApplicationController
       refresh_token = response.to_hash[:refresh_token]
 
       if params[:state] != Rack::Utils.escape(session[:state])
-        raise "INVALID STATE"
         return render(:file => File.join(Rails.root, 'public/403.html'), :status => 403, :layout => false)
       end
       # Decode the token

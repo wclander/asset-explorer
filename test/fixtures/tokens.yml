@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  character: one
+  token: MyString
+  valid_until: 2022-05-15 16:54:18
+  is_refresh_token: false
+
+two:
+  character: two
+  token: MyString
+  valid_until: 2022-05-15 16:54:18
+  is_refresh_token: false
